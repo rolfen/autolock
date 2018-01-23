@@ -1,0 +1,2 @@
+#Find which package a file belongs to
+dpkg -S <filename>
