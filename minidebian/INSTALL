@@ -1,4 +1,27 @@
 Start with the debian netinst, all packages deselected
 
-Firefox right-click bug fix for wayland:
+Automount: I think udisks2. I tried pmount (need to add a udev rule) and udevil - they're both cool but udisks2 might work best - I think it's the default.
+
+Wifi config: wicd
+
+Terminal: weston-terminal has some issues, high-cpu and artefacts with layout characters (lines etc.)
+gnome-terminal works but I think it might have lots of deps.
+We need one that work on wayland. Look into some of these: 
+https://www.slant.co/topics/5372/~wayland-terminal-emulators
+
+Weston:
+
+Firefox right-click bug fix for weston (or wayland):
 Copy userChrome.css to <your firefox profile>/chrome
+
+~/.config/weston.ini:
+
+[core]
+# support X apps (Firefox, etc.)
+modules=xwayland.so
+
+[libinput]
+enable_tap=true
+
+TODO:
+International keyboards
