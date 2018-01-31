@@ -1,0 +1,4 @@
+Start with the debian netinst, all packages deselected
+
+Firefox right-click bug fix for wayland:
+Copy userChrome.css to <your firefox profile>/chrome
