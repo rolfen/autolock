@@ -1,2 +1,6 @@
 #Find which package a file belongs to
 dpkg -S <filename>
+
+#Purge previously uninstalled packages
+sudo apt-get purge $(dpkg -l | grep ^rc | awk {print $2})
+
