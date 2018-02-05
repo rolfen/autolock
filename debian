@@ -3,3 +3,7 @@ dpkg -S <filename>
 
 #Check battery state
 upower -i $(upower -e | grep 'BAT') | grep -E "state|percentage"
+
+#Purge previously uninstalled packages
+sudo apt-get purge $(dpkg -l | grep ^rc | awk {print $2})
+
