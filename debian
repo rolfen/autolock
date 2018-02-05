@@ -1,2 +1,5 @@
 #Find which package a file belongs to
 dpkg -S <filename>
+
+#Check battery state
+upower -i $(upower -e | grep 'BAT') | grep -E "state|percentage"

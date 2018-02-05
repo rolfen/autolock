@@ -2,7 +2,10 @@ Start with the debian netinst, all packages deselected
 
 Automount: I think udisks2. I tried pmount (need to add a udev rule) and udevil - they're both cool but udisks2 might work best - I think it's the default.
 
+Sound volume: alsamixer
+
 Wifi config: wicd
+Note: wicd seems to leave a daemon running, which I don't like. The interface is nice and the software minimal, though.
 
 Terminal: weston-terminal has some issues, high-cpu and artefacts with layout characters (lines etc.)
 gnome-terminal works but I think it might have lots of deps.
@@ -25,3 +28,6 @@ enable_tap=true
 
 TODO:
 International keyboards
+
+FOUND BUGS:
+Sluggish keyboard in subl. Weird cursor blinkie when typing in terminal after Super-Tab'ing away from it.
