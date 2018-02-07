@@ -5,5 +5,4 @@ dpkg -S <filename>
 upower -i $(upower -e | grep 'BAT') | grep -E "state|percentage"
 
 #Purge previously uninstalled packages
-sudo apt-get purge $(dpkg -l | grep ^rc | awk {print $2})
-
+sudo apt-get purge $(dpkg -l | grep '^rc' | awk '{print $2}')

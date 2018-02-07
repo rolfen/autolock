@@ -8,26 +8,13 @@ Wifi config: wicd
 Note: wicd seems to leave a daemon running, which I don't like. The interface is nice and the software minimal, though.
 
 Terminal: weston-terminal has some issues, high-cpu and artefacts with layout characters (lines etc.)
+lxterminal seem to work and not be vulnerable to snooping
 gnome-terminal works but I think it might have lots of deps.
-We need one that work on wayland. Look into some of these: 
+Other potential options: 
 https://www.slant.co/topics/5372/~wayland-terminal-emulators
 
 Weston:
 
 Firefox right-click bug fix for weston (or wayland):
-Copy userChrome.css to <your firefox profile>/chrome
-
-~/.config/weston.ini:
-
-[core]
-# support X apps (Firefox, etc.)
-modules=xwayland.so
-
-[libinput]
-enable_tap=true
-
-TODO:
-International keyboards
-
-FOUND BUGS:
-Sluggish keyboard in subl. Weird cursor blinkie when typing in terminal after Super-Tab'ing away from it.
+Copy userChrome.css from ./res to <your firefox profile>/chrome
+and weston.ini to ~/.config/
