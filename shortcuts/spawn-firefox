@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#Spawns new instance of firefox with temporary profile
+
+FFBIN=/opt/firefox/firefox
+FFPROFILE=$RANDOM
+#spaces in dir not supported
+PROFILE_PARENT_DIR="/tmp"
+PROFILE_DIR="$PROFILE_PARENT_DIR/$FFPROFILE"
+
+#set $DO to echo for debugging
+DO=''
+
+$DO $FFBIN -CreateProfile "$FFPROFILE $PROFILE_PARENT_DIR/$FFPROFILE" -no-remote
+$DO $FFBIN -profile $PROFILE_DIR -new-instance -no-remote
+$DO rm -rf $PROFILE_DIR && echo "Temporary profile cleaned up, Inshallah."

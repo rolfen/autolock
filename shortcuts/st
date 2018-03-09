@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+stterm -f "Liberation Mono:pixelsize=15:antialias=true:autohint=true"

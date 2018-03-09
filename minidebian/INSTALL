@@ -18,3 +18,18 @@ Weston:
 Firefox right-click bug fix for weston (or wayland):
 Copy userChrome.css from ./res to <your firefox profile>/chrome
 and weston.ini to ~/.config/
+
+
+Default file browser:
+Check default:
+xdg-mime query default inode/directory
+Set:
+xdg-mime default pcmanfm inode/directory application
+
+Some dependencies:
+hicolor-icon-theme
+
+Also files in ~/os/
+
+Enable tap to click for X
+xinput set-prop ETPS/2 Elantech Touchpad libinput Tapping Enabled 1
