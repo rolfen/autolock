@@ -6,3 +6,7 @@ apt-file find <filename>
 
 #Purge previously uninstalled packages
 sudo apt-get purge $(dpkg -l | grep '^rc' | awk '{print $2}')
+
+#run Gnome standalone
+gnome-shell --wayland --replace
+
