@@ -1,0 +1,6 @@
+#!/bin/sh
+# Appends output of command to stdin
+# Eg: ls /home/ |./append ls /tmp/
+# Maybe you could just do $(ls /home/ ; ls /tmp/)
+cat /dev/stdin
+$*
