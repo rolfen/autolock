@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/rolf/src/wlroots/build/rootston/rootston -E stterm -C /home/rolf/src/wlroots/build/rootston/rootston.ini
