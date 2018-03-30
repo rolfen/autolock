@@ -1,0 +1,14 @@
+[Unit]
+
+Description=Calls for locking all sessions on suspend
+
+Before=suspend.target
+
+[Service]
+
+ExecStart=/usr/bin/env loginctl lock-sessions
+
+[Install]
+
+WantedBy=suspend.target
+

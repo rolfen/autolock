@@ -1,0 +1,33 @@
+
+SYSTEMD_USER_CONF=/etc/systemd/user
+SYSTEMD_CONF=/etc/systemd/system
+LOCAL_BIN=/usr/local/bin
+
+sudo su <<SUDO
+
+if [ $(id -u) -ne 0 ];
+	then echo "Cannot proceed, root required.";
+	exit;
+fi;
+
+cp res/lock.service $SYSTEMD_CONF/
+chown root $SYSTEMD_CONF/lock.service
+chgrp root $SYSTEMD_CONF/lock.service
+
+systemctl daemon-reload
+systemctl enable lock.service
+
+cp res/systemd-lock-handler $LOCAL_BIN/systemd-lock-handler
+chown root $LOCAL_BIN/systemd-lock-handler
+chgrp root $LOCAL_BIN/systemd-lock-handler
+
+cp res/session-lock.service $SYSTEMD_USER_CONF/
+chown root $SYSTEMD_USER_CONF/session-lock.service
+chgrp root $SYSTEMD_USER_CONF/session-lock.service
+
+SUDO
+
+
+systemctl --user daemon-reload
+systemctl --user enable session-lock.service
+

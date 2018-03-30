@@ -1,0 +1,11 @@
+[Unit]
+
+Description=Lock session in response to a lock request
+
+[Service]
+
+ExecStart=/usr/local/bin/systemd-lock-handler /usr/bin/physlock -ms 
+
+[Install]
+
+WantedBy=default.target
