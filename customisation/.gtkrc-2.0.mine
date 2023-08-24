@@ -1,5 +1,0 @@
-# Your home dir must contain .gtkrc-2.0 containing the following line:
-# include "/home/rolf/.gtkrc-2.0.mine"
-# Otherwise you can put the below directly in .gtkrc-2.0
-
-gtk-double-click-time=500
